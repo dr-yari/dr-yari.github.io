@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دکتر حسین یاری | متخصص طب فیزیکی و توانبخشی</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0e4b75;
+      --secondary: #1976d2;
+      --text: #2c3e50;
+      --bg: #f4f7f9;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --badge-bg: #e3f2fd;
+      --badge-color: #0d47a1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Vazirmatn, "IRANSans", sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 1.5rem 1rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+    }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .profile-info h1 {
+      color: var(--primary);
+      font-size: 1.9rem;
+      margin-bottom: 0.3rem;
+    }
+    .profile-info h3 {
+      font-size: 1.1rem;
+      color: #546e7a;
+      font-weight: 500;
+    }
+    .badges {
+      margin-top: 0.8rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: var(--badge-bg);
+      color: var(--badge-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .btn-download {
+      text-decoration: none;
+      color: #fff;
+      background: var(--primary);
+      padding: 0.65rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-download:hover { background: var(--secondary); }
+    .contact-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    h2 {
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+    h3.sub-title {
+      font-size: 1.05rem;
+      color: var(--secondary);
+      margin: 1.2rem 0 0.6rem;
+    }
+    ul { list-style-type: none; }
+    li {
+      margin-bottom: 0.9rem;
+      position: relative;
+      padding-right: 1.2rem;
+    }
+    li::before {
+      content: "•";
+      color: var(--secondary);
+      font-size: 1.4rem;
+      position: absolute;
+      right: 0;
+      top: -3px;
+    }
+    .item-title { font-weight: 600; color: #1e293b; }
+    .item-meta { font-size: 0.88rem; color: #64748b; }
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+    }
+    .interest-box {
+      background: #f1f5f9;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      border-right: 4px solid var(--secondary);
+      font-weight: 500;
+    }
+    .pub-card {
+      background: #f8fafc;
+      border-right: 4px solid var(--secondary);
+      padding: 0.9rem 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+    .pub-title-en {
+      direction: ltr;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #1e293b;
+    }
+    .pub-authors {
+      direction: ltr;
+      text-align: left;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 0.4rem;
+    }
+    .pub-links {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    .pub-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #0284c7;
+      color: white;
+      text-decoration: none;
+      padding: 0.25rem 0.7rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .pub-link-btn:hover { background: #0369a1; }
+    .status-tag {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .status-inpress { background: #fef3c7; color: #b45309; }
+    .status-underreview { background: #e0e7ff; color: #4338ca; }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="profile-info">
+      <h1>دکتر حسین یاری</h1>
+      <h3>متخصص طب فیزیکی و توانبخشی | عضو هیئت علمی جهاد دانشگاهی علوم پزشکی تهران</h3>
+      <div class="badges">
+        <span class="badge">شماره نظام پزشکی: ۱۴۲۷۸۷</span>
+        <span class="badge">استادیار دانشگاه</span>
+        <span class="badge">معاون پژوهش و فناوری</span>
+      </div>
+    </div>
+    <div>
+      <a href="cv.pdf" target="_blank" class="btn-download">
+        <i class="fas fa-file-pdf"></i> دانلود فایل کامل رزومه (PDF)
+      </a>
+    </div>
+  </header>
+
+  <!-- اطلاعات تماس و آدرس -->
+  <section class="contact-box">
+    <strong><i class="fas fa-map-marker-alt"></i> نشانی محل کار:</strong> تهران، خیابان انقلاب، خیابان ابوریحان، نبش خیابان شهید نظری، پلاک ۶۶، ساختمان یارا، معاونت پژوهشی جهاد دانشگاهی علوم پزشکی تهران
+    <div class="contact-grid">
+      <div><i class="fas fa-phone"></i> <strong>شماره تماس:</strong> ۰۹۱۳۱۶۸۲۹۱۸</div>
+      <div><i class="fas fa-envelope"></i> <strong>پست الکترونیک:</strong> yari.hossein@acecr.ac.ir</div>
+    </div>
+  </section>
+
+  <!-- خلاصه حرفه‌ای -->
+  <section>
+    <h2><i class="fas fa-user-md"></i> خلاصه حرفه‌ای</h2>
+    <p>
+      متخصص طب فیزیکی و توانبخشی با تمرکز بر مدیریت دردهای اسکلتی‌عضلانی، زخم و ترمیم بافت، و طب مبتنی بر سبک زندگی. دارای سابقه پژوهشی در حوزه‌های درد مزمن، توانبخشی بیماران مبتلا به سرطان و سالمندان؛ مؤلف و مترجم کتاب‌های تخصصی پزشکی؛ مدرس دوره‌های توانبخشی و کارگاه‌های بالینی پزشکان؛ و دارای تجارب مدیریتی و اجرایی در سازمان جهاد دانشگاهی علوم پزشکی تهران و راه‌اندازی مراکز تخصصی توانبخشی.
+    </p>
+  </section>
+
+  <!-- زمینه‌های مورد علاقه پژوهشی و بالینی -->
+  <section>
+    <h2><i class="fas fa-microscope"></i> علایق پژوهشی و بالینی</h2>
+    <div class="interests-grid">
+      <div class="interest-box">دردهای اسکلتی‌عضلانی و توان‌بخشی</div>
+      <div class="interest-box">طب مبتنی بر سبک زندگی و پیشگیری در سالمندان</div>
+      <div class="interest-box">الکترودیاگنوز (نوار عصب و عضله - EMG/NCS)</div>
+      <div class="interest-box">زخم و ترمیم بافت</div>
+    </div>
+  </section>
+
+  <!-- تحصیلات -->
+  <section>
+    <h2><i class="fas fa-graduation-cap"></i> سوابق تحصیلی</h2>
+    <ul>
+      <li>
+        <div class="item-title">تخصص طب فیزیکی و توانبخشی (دانشنامه تخصصی / بورد)</div>
+        <div class="item-meta">دانشگاه علوم پزشکی شیراز (۱۳۹۲ – ۱۳۹۵)</div>
+        <div class="item-meta"><strong>عنوان پایان‌نامه:</strong> Effect of early morning electrodiagnosis on diagnosis and grading of patients with suspected mild carpal tunnel syndrome</div>
+      </li>
+      <li>
+        <div class="item-title">دکترای حرفه‌ای پزشکی (M.D.)</div>
+        <div class="item-meta">دانشگاه علوم پزشکی تهران (۱۳۸۴ – ۱۳۹۲)</div>
+        <div class="item-meta"><strong>عنوان پایان‌نامه:</strong> بررسی روایی و پایایی نسخه فارسی ابزار ۱۳ سوالی ارزیابی خستگی FACIT-Fatigue در بیماران مبتلا به سرطان پستان</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- سوابق دانشگاهی و بالینی -->
+  <section>
+    <h2><i class="fas fa-hospital-user"></i> سمت‌های دانشگاهی و بالینی</h2>
+    <h3 class="sub-title"><i class="fas fa-university"></i> سمت‌های دانشگاهی و مدیریتی</h3>
+    <ul>
+      <li><strong>معاون پژوهش و فناوری:</strong> سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۴)</li>
+      <li><strong>سرپرست معاونت پژوهشی:</strong> سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۳)</li>
+      <li><strong>عضو هیئت علمی (استادیار):</strong> گروه پژوهشی پزشکی مبتنی بر سبک زندگی، سازمان جهاد دانشگاهی علوم پزشکی تهران (از ۱۴۰۳ تاکنون)</li>
+    </ul>
+
+    <h3 class="sub-title"><i class="fas fa-clinic-medical"></i> سمت‌ها و فعالیت‌های بالینی</h3>
+    <ul>
+      <li><strong>مؤسس و مسئول فنی:</strong> مرکز فیزیوتراپی تخصصی سلامت لگن «هیرو»، تهران (۱۴۰۴)</li>
+      <li><strong>راه‌اندازی و مدیریت:</strong> کلینیک طب پیشگیری و ارتقای سلامت، سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۲)</li>
+      <li><strong>متخصص طب فیزیکی و توانبخشی:</strong> بیمارستان فوق‌تخصصی ولیعصر فراجا (۱۳۹۷ تاکنون)</li>
+      <li><strong>متخصص طب فیزیکی و توانبخشی:</strong> کلینیک جامع توانبخشی آرمان (۱۳۹۶ – ۱۴۰۴)</li>
+    </ul>
+  </section>
+
+  <!-- مقالات -->
+  <section>
+    <h2><i class="fas fa-newspaper"></i> مقالات علمی و پژوهشی</h2>
+    <h3 class="sub-title">مقالات چاپ‌شده در مجلات بین‌المللی</h3>
+
+    <!-- مقاله اول با لینک پابمد -->
+    <div class="pub-card">
+      <div class="pub-title-en">Sensitivity and Specificity of Modified Bragard Test in Patients With Lumbosacral Radiculopathy Using Electrodiagnosis as a Reference Standard</div>
+      <div class="pub-authors">Homayouni K, Jafari SH, Yari H.</div>
+      <div><em>Journal of Chiropractic Medicine</em>. 2018; 17(1): 36-43.</div>
+      <div class="pub-links">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/29628807/" target="_blank" class="pub-link-btn">
+          <i class="fas fa-external-link-alt"></i> مشاهده در PubMed (PMID: 29628807)
+        </a>
+      </div>
+    </div>
+
+    <!-- مقاله دوم -->
+    <div class="pub-card">
+      <div class="pub-title-en">A Comparison of H-reflex in Triceps Surae muscle group in Patients with S1 Radiculopathy</div>
+      <div class="pub-authors">Emad MR, Momeninejad H, Pourabbas Tahvildari B, Yari H.</div>
+      <div><em>Somatosensory & Motor Research</em>. 2017; 34(4): 213-218.</div>
+      <div class="pub-links">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=A+Comparison+of+H-reflex+in+Triceps+Surae+muscle+group+in+Patients+with+S1+Radiculopathy" target="_blank" class="pub-link-btn">
+          <i class="fas fa-search"></i> جستجو و مشاهده در PubMed
+        </a>
+      </div>
+    </div>
+
+    <!-- مقاله سوم -->
+    <div class="pub-card">
+      <div class="pub-title-en">Disease-Free Survival With Capecitabine Compared To 5-FU For Concurrent Radiochemotherapy of Rectal Cancer...</div>
+      <div class="pub-authors">Haddad P, Farsiani AR, Dadpour M, Yari H, Maddah Safaei A, Miraei M.</div>
+      <div>مجله علمی بین‌المللی رادیوانکولوژی / انکولوژی</div>
+      <div class="pub-links">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Haddad+P+Capecitabine+5-FU+Rectal+Cancer+Yari+H" target="_blank" class="pub-link-btn">
+          <i class="fas fa-search"></i> جستجو در PubMed
+        </a>
+      </div>
+    </div>
+
+    <h3 class="sub-title">مقالات پذیرفته‌شده / در حال داوری</h3>
+
+    <div class="pub-card">
+      <div class="pub-title-en">Effect of Early Morning Electrodiagnosis on Diagnosis and Grading of Patients with Suspected Mild Carpal Tunnel Syndrome</div>
+      <div class="pub-authors">Yari H, Ashraf A, Mohammadi A.</div>
+      <div><em>Clinical Neurophysiology</em> <span class="status-tag status-inpress">In Press (در دست انتشار)</span></div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title-en">Cardiac Rehabilitation Compared With Medical Therapy in Patients with Recurrent Angina after Percutaneous Coronary Intervention: A Randomized Controlled Trial</div>
+      <div class="pub-authors">Homayouni K, Roshanaei Heydarabadi F, Pakyari MH, Yari H.</div>
+      <div><em>World Family Medicine Journal</em> <span class="status-tag status-underreview">Under Review (در حال داوری)</span></div>
+    </div>
+  </section>
+
+  <!-- کتاب‌ها -->
+  <section>
+    <h2><i class="fas fa-book"></i> کتاب‌ها و تألیفات</h2>
+    <ul>
+      <li><strong>«آشنایی با نوار عصب-عضله و نحوه انجام آن»</strong> | تألیف | تهران: انتشارات آریانگار، ۱۳۹۷.</li>
+      <li><strong>«کتاب کمر؛ بهترین راه مواجه با کمردرد»</strong> | ترجمه | تهران: انتشارات آریانگار، ۱۳۹۷.</li>
+      <li><strong>«۱۴۱ تجربه برای شرکت در آزمون دستیاری پزشکی»</strong> | تألیف | تهران: انتشارات جهاد دانشگاهی، ۱۳۹۶.</li>
+      <li><strong>«عروج سرخ (گرامیداشت شهید دکتر سید احمد رحیمی)»</strong> | تألیف | تهران: انتشارات جهاد دانشگاهی، ۱۳۸۸.</li>
+    </ul>
+  </section>
+
+  <!-- طرح‌های پژوهشی -->
+  <section>
+    <h2><i class="fas fa-tasks"></i> طرح‌های پژوهشی و گرنت‌ها</h2>
+    <ul>
+      <li><strong>همکار پژوهشی:</strong> «طرح پایش و ارتقا سلامت اعضای جهاد دانشگاهی»، جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۳)</li>
+      <li><strong>همکار پژوهشی:</strong> «طرح ارتباط بین رفتارهای کم‌تحرک با خطر زمین‌خوردن و ترس از زمین‌خوردن سالمندان ایرانی؛ مطالعه کوهورت سلامت سالمندان بوشهر»، جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۰)</li>
+      <li><strong>همکار پژوهشی:</strong> «طرح پژوهشی بررسی عوارض داروی خوراکی capecitabine و مقایسه آن با 5FU وریدی در کمورادیوتراپی همزمان در سرطان رکتوم»، دانشگاه علوم پزشکی تهران (۱۳۹۰)</li>
+    </ul>
+  </section>
+
+  <!-- همایش‌ها و سخنرانی‌ها -->
+  <section>
+    <h2><i class="fas fa-chalkboard-teacher"></i> همایش‌ها، سخنرانی‌ها و ارائه‌ها</h2>
+    
+    <h3 class="sub-title">سخنرانی‌های دعوت‌شده در کنگره‌ها</h3>
+    <ul>
+      <li>سخنرانی در بیست‌وهشتمین کنگره سالیانه طب فیزیکی و توان‌بخشی و الکترودیاگنوز ایران (خرداد ۱۴۰۴)</li>
+      <li>سخنرانی در ششمین سمینار اختلالات عضلانی-اسکلتی ساری (آذر ۱۴۰۳)</li>
+      <li>سخنرانی در اولین کنگره پزشکی مبتنی بر سبک زندگی (اسفند ۱۴۰۱)</li>
+      <li>سخنرانی در نهمین کنگره بین‌المللی زخم و ترمیم بافت (بهمن ۱۴۰۱)</li>
+      <li>سخنرانی در دهمین کنفرانس علمی خودمراقبتی (مرداد ۱۴۰۱)</li>
+      <li>سخنرانی در هشتمین کنگره بین‌المللی زخم و ترمیم بافت (بهمن ۱۴۰۰)</li>
+      <li>سخنرانی در اولین سمپوزیوم سبک زندگی سالم و سلامت الکترونیک (بهمن ۱۳۹۹)</li>
+      <li>سخنرانی در پنجمین کنگره بین‌المللی زخم و ترمیم بافت (آذر ۱۳۹۹)</li>
+    </ul>
+
+    <h3 class="sub-title">ارائه شفاهی (Oral Presentation)</h3>
+    <ul>
+      <li>سخنرانی و ارائه مقاله در بیست‌ویکمین کنگره سالیانه طب فیزیکی و توان‌بخشی و الکترودیاگنوز ایران (دی ۱۳۹۶)</li>
+    </ul>
+
+    <h3 class="sub-title">ارائه پوستر در مجامع بین‌المللی و ملی</h3>
+    <ul>
+      <li>بیست‌وسومین نشست علمی سالیانه انجمن رادیوانکولوژی کانادا (CARO)، کبک، کانادا (اکتبر ۲۰۰۹)</li>
+      <li>سیزدهمین کنگره جهانی سرطان‌های دستگاه گوارش (ESMO-GI)، بارسلون، اسپانیا (ژوئن ۲۰۱۱)</li>
+      <li>بیست‌ویکمین کنگره سالیانه طب فیزیکی و توان‌بخشی و الکترودیاگنوز ایران (دی ۱۳۹۶)</li>
+    </ul>
+  </section>
+
+  <!-- تدریس و کارگاه‌ها -->
+  <section>
+    <h2><i class="fas fa-user-graduate"></i> سوابق تدریس دانشگاهی و کارگاه‌های آموزشی</h2>
+    <h3 class="sub-title">تدریس در دانشگاه</h3>
+    <ul>
+      <li>مدرس درس <strong>«فیزیولوژی»</strong> (۳ واحد نظری)، گروه مهندسی پزشکی، دانشگاه علم و فرهنگ (۱۴۰۳ – ۱۴۰۴)</li>
+      <li>مدرس درس <strong>«آناتومی»</strong> (۲ واحد نظری)، گروه مهندسی پزشکی، دانشگاه علم و فرهنگ (۱۴۰۳ – ۱۴۰۴)</li>
+    </ul>
+
+    <h3 class="sub-title">دوره‌ها و کارگاه‌های آموزشی تخصصی</h3>
+    <ul>
+      <li>تهیه، تدوین و اجرای دوره آموزشی <strong>«تشخیص و درمان کمردرد ویژه پزشکان عمومی»</strong>، جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۱)</li>
+      <li>مدرس سرفصل <strong>«مدیریت زخم‌های فشاری»</strong> در دوره مدیریت زخم ویژه پزشکان و پرستاران و دوره بین‌المللی ICW، جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۱)</li>
+      <li>مدرس سرفصل <strong>«لیزرهای کم‌توان در تسکین درد»</strong> ویژه پزشکان عمومی، جهاد دانشگاهی علوم پزشکی تهران (۱۳۹۷)</li>
+    </ul>
+  </section>
+
+  <!-- خدمات حرفه‌ای و مسئولیت‌های اجرایی -->
+  <section>
+    <h2><i class="fas fa-briefcase"></i> خدمات حرفه‌ای، داوری و مسئولیت‌های اجرایی</h2>
+    <ul>
+      <li>معاون پژوهش و فناوری سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۴)</li>
+      <li>سرپرست معاونت پژوهشی سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۳)</li>
+      <li>عضو کمیته علمی یازدهمین کنگره بین‌المللی زخم و ترمیم بافت (۱۴۰۳)</li>
+      <li>عضو کمیته اطلاع‌رسانی و روابط عمومی انجمن علمی طب فیزیکی و توان‌بخشی و الکترودیاگنوز ایران (۱۴۰۳)</li>
+      <li>راه‌اندازی و مدیریت کلینیک طب پیشگیری و ارتقای سلامت جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۲)</li>
+      <li>داوری کتاب‌های منتشره در انتشارات جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۱)</li>
+      <li>عضو کمیته علمی اولین کنگره پزشکی مبتنی بر سبک زندگی (۱۴۰۱)</li>
+      <li>داوری مقالات مجله «فصلنامه علمی-پژوهشی بیماری‌های پستان ایران» (۱۳۹۹)</li>
+      <li>دبیر اجرایی و عضو کمیته علمی اولین سمپوزیوم سبک زندگی سالم و سلامت الکترونیک (۱۳۹۹)</li>
+      <li>سرپرست معاونت فرهنگی و معاون فرهنگی سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۳۹۷ – ۱۳۹۹)</li>
+      <li>منتور اولین استارتاپ‌ویکند تخصصی زخم و ترمیم بافت (۱۳۹۸)</li>
+      <li>مشاور رئیس جهاد دانشگاهی علوم پزشکی تهران (۱۳۹۷)</li>
+      <li>مسئول شعبه سازمان دانشجویان جهاد دانشگاهی علوم پزشکی تهران (۱۳۹۷)</li>
+      <li>دبیر دهمین همایش «نکوداشت مقام استاد»، دانشگاه علوم پزشکی تهران (۱۳۹۰)</li>
+      <li>مدیر اجرایی سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۳۸۸ – ۱۳۹۱)</li>
+    </ul>
+  </section>
+
+  <!-- جوایز و افتخارات -->
+  <section>
+    <h2><i class="fas fa-award"></i> جوایز و افتخارات</h2>
+    <ul>
+      <li><strong>جهادگر برگزیده</strong> سازمان جهاد دانشگاهی علوم پزشکی تهران (۱۴۰۰)</li>
+      <li><strong>کسب دانشنامه تخصصی (بورد تخصصی)</strong> طب فیزیکی و توان‌بخشی (۱۳۹۶)</li>
+      <li><strong>اینترن نمونه</strong> مرکز طبی کودکان، دانشگاه علوم پزشکی تهران (۱۳۹۰)</li>
+      <li><strong>برگزیده شانزدهمین دوره کتاب سال دانشجویی کشور</strong> برای تألیف کتاب «عروج سرخ» (۱۳۸۸)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>تمامی حقوق متعلق به وب‌سایت شخصی دکتر حسین یاری می‌باشد | میزبانی شده بر روی GitHub Pages</p>
+  </footer>
+</div>
+
+</body>
+</html>
